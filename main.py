@@ -1,5 +1,4 @@
 import json
-from io import BytesIO
 
 import guest.main
 import http.server
@@ -38,7 +37,6 @@ class Server(http.server.BaseHTTPRequestHandler):
 
 def main():
     port = int(os.environ['SKYHOOK_PORT'])
-
     print("Hello from baseimage")
     server = http.server.HTTPServer(('0.0.0.0', port), Server)
     server.serve_forever()
